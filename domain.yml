@@ -1,0 +1,57 @@
+version: "3.1"
+intents:
+  - greet
+  - goodbye
+  - ask_university
+  - bot_challenge
+  - thanks
+  - affirm
+
+entities:
+  - course
+
+responses:
+  utter_greet:
+  - text: "Hi there! I can help you find the best university for your desired course. Please let me know what course you're interested in."
+
+  utter_goodbye:
+  - text: "Goodbye! Have a nice day."
+
+  utter_thanks:
+  - text: "You're welcome! Let me know if you have any other questions."
+
+  utter_ask_course:
+  - text: "What course are you interested in?"
+
+  utter_recommend_university:
+  - text: "I recommend {{ university }} for {{ course }}."
+
+  utter_no_university_found:
+  - text: "Sorry, I couldn't find any university for {{ course }}."
+
+  utter_ask_university:
+  - text: "Which university would you like to study {{ course }} at?"
+
+  utter_affirm:
+  - text: "Great! I'm glad I could help. Do you have any other questions?"
+
+actions:
+  - action_recommend_university
+
+slots:
+  course:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: course
+  university:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: university
+
+templates:
+  utterances:
+  - "I want to study [computer science](course)."
+  - "Which university is best for [data science](course)?"
+  - "Can you recommend a university for [mechanical engineering](course)?"

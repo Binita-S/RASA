@@ -1,0 +1,33 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Hi
+      - Hello
+      - Hey
+  - intent: goodbye
+    examples: |
+      - Bye
+      - Goodbye
+      - See you
+  - intent: thanks
+    examples: |
+      - Thanks
+      - Thank you
+      - Appreciate it
+  - intent: ask_university
+    examples: |
+      - Which university is best for {course}?
+      - Can you recommend a university for {course}?
+      - What's the best university to study {course}?
+  - intent: affirm
+    examples: |
+      - Yes
+      - Sure
+      - Okay
+  - intent: inform
+    examples: |
+      - I want to study {course}.
+      - My preferred course is {course}.
+      - I'm interested in {course}.

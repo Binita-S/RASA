@@ -1,0 +1,28 @@
+version: "3.1"
+stories:
+  - story: recommend university for a course
+    steps:
+    - intent: greet
+      action: utter_greet
+    - intent: ask_university
+      action: utter_ask_course
+    - intent: inform
+      entities:
+        - course: "computer science"
+      action: utter_ask_university
+    - intent: inform
+      entities:
+        - course: "computer science"
+        - university: "MIT"
+      action: action_recommend_university
+    - action: utter_recommend_university
+    - intent: affirm
+      action: utter_affirm
+    - intent: goodbye
+      action: utter_goodbye
+
+
+  
+
+
+
